@@ -2,7 +2,10 @@
 % and im22, by blurring image im11 using sigma1 and im22 using sigma2
 % Adina Stoica 2012, CSE 559A Computer Vision, Washington University in St. Louis
 
-%adapted on 07.05.2018 by AT
+% adapted on 07.05.2018 by AT, 
+% original script from https://github.com/adinutzyc21/ComputerVision/tree/master/Project_1_hybrid_images
+% under MIT license
+
 function finIm = hybridIm(im11,im22,sigma1,sigma2)
     if(length(size(im11))==3)
         im1 = double(rgb2gray(im11));

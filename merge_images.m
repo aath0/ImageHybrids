@@ -1,14 +1,18 @@
-clear
-filep = '/Users/atzovara/Documents/Projects/DualEEG/Images/';
+% Merges two images and creates a hybrid image with or without additional
+% gaussian noise. All images need to be in the same directory ('filep')
+% First version: 07.05.2018, Athina Tzovara
 
-ftype = '.png';
+clear
+filep = '/Users/atzovara/Documents/Projects/DualEEG/Images/'; % folder containing all images
+
 im1f = 'platypus'; % image 1
-im2f = 'cookingpot' % image 2
-lab = '';
+im2f = 'cookingpot'; % image 2
+ftype = '.png'; % file type
 
 noise = 1; % add noise? 0: no noise, 1: add noise
 noise_m = 0.1; % mean of gaussian noise
 noise_v = 0.2; % variance of gaussian noise
+lab = '';
 
 im1 = imread([filep, im1f, ftype]);
 im2 = imread([filep, im2f, ftype]);
@@ -27,4 +31,6 @@ if noise
     finIm = imnoise(finIm,'gaussian', noise_m, noise_v);
     lab = ['_noise_mean', num2str(noise_m), '_var', num2str(noise_v)];
 end
+
+% save output:
 imwrite(finIm,[filep, im1f, '_', im2f, lab,ftype]);
