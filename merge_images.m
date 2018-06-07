@@ -11,7 +11,7 @@ ftype = '.png'; % file type
 
 noise = 1; % add noise? 0: no noise, 1: add noise
 noise_m = 0.1; % mean of gaussian noise
-noise_v = 0.2; % variance of gaussian noise
+noise_v = 0.1; % variance of gaussian noise
 lab = '';
 
 im1 = imread([filep, im1f, ftype]);
